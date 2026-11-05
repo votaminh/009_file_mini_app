@@ -1,0 +1,123 @@
+{
+  "source": "name mappings reviewed against original Lottie nm strings",
+  "count": 18,
+  "mapped": {
+    "mountain_climber": {
+      "action_id": 12,
+      "variant": 1,
+      "original_name": "mountain_climber",
+      "path": "assets/exercise_lottie_original/action_12_v1.json"
+    },
+    "standing_bicycle": {
+      "action_id": 167,
+      "variant": 1,
+      "original_name": "standing_bicycle_crunch",
+      "path": "assets/exercise_lottie_original/action_167_v1.json"
+    },
+    "reverse_crunch": {
+      "action_id": 4,
+      "variant": 1,
+      "original_name": "reverse_crunch",
+      "path": "assets/exercise_lottie_original/action_4_v1.json"
+    },
+    "cobra": {
+      "action_id": 198,
+      "variant": 1,
+      "original_name": "cobra_stretch",
+      "path": "assets/exercise_lottie_original/action_198_v1.json"
+    },
+    "arm_circles": {
+      "action_id": 61,
+      "variant": 1,
+      "original_name": "arm_circles",
+      "path": "assets/exercise_lottie_original/action_61_v1.json"
+    },
+    "squat": {
+      "action_id": 21,
+      "variant": 1,
+      "original_name": "squats",
+      "path": "assets/exercise_lottie_original/action_21_v1.json"
+    },
+    "lunge": {
+      "action_id": 88,
+      "variant": 1,
+      "original_name": "backward_lunge",
+      "path": "assets/exercise_lottie_original/action_88_v1.json"
+    },
+    "glute_bridge": {
+      "action_id": 48,
+      "variant": 1,
+      "original_name": "butt_bridge",
+      "path": "assets/exercise_lottie_original/action_48_v1.json"
+    },
+    "wall_pushup": {
+      "action_id": 17,
+      "variant": 1,
+      "original_name": "wall_push_up",
+      "path": "assets/exercise_lottie_original/action_17_v1.json"
+    },
+    "knee_pushup": {
+      "action_id": 34,
+      "variant": 1,
+      "original_name": "knee_push_up",
+      "path": "assets/exercise_lottie_original/action_34_v1.json"
+    },
+    "bird_dog": {
+      "action_id": 10,
+      "variant": 1,
+      "original_name": "bird_dog",
+      "path": "assets/exercise_lottie_original/action_10_v1.json"
+    },
+    "dead_bug": {
+      "action_id": 177,
+      "variant": 1,
+      "original_name": "dead_bug",
+      "path": "assets/exercise_lottie_original/action_177_v1.json"
+    },
+    "plank": {
+      "action_id": 3,
+      "variant": 1,
+      "original_name": "plank",
+      "path": "assets/exercise_lottie_original/action_3_v1.json"
+    },
+    "step_jack": {
+      "action_id": 721,
+      "variant": 1,
+      "original_name": "side_step_jacks",
+      "path": "assets/exercise_lottie_original/action_721_v1.json"
+    },
+    "jumping_jack": {
+      "action_id": 15,
+      "variant": 1,
+      "original_name": "jumping_jacks",
+      "path": "assets/exercise_lottie_original/action_15_v1.json"
+    },
+    "high_knee": {
+      "action_id": 33,
+      "variant": 1,
+      "original_name": "high_stepping",
+      "path": "assets/exercise_lottie_original/action_33_v1.json"
+    },
+    "chest_stretch": {
+      "action_id": 143,
+      "variant": 1,
+      "original_name": "chest_stretch",
+      "path": "assets/exercise_lottie_original/action_143_v1.json"
+    },
+    "child_pose": {
+      "action_id": 144,
+      "variant": 1,
+      "original_name": "childs_pose",
+      "path": "assets/exercise_lottie_original/action_144_v1.json"
+    }
+  },
+  "unmapped": [
+    "march",
+    "torso_twist",
+    "chair_squat",
+    "calf_raise",
+    "side_plank",
+    "standing_knee",
+    "quad_stretch"
+  ]
+}

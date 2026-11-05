@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" width="29" height="29"><defs><clipPath id="clp0"><path d="M8.5,9h12v11.5h-12z" /></clipPath><clipPath id="clp1"><path d="M8.5,9h12v11.5h-12z" /></clipPath></defs><path d="M9,1L20,1A8,8 0,0 1,28 9L28,20A8,8 0,0 1,20 28L9,28A8,8 0,0 1,1 20L1,9A8,8 0,0 1,9 1z" fill="#F7F7F7" stroke="#DEDEDE" stroke-width="0.61425" /><g><g clip-path="url(#clp0)"><g><g clip-path="url(#clp1)"><path d="M10.882,17.336V15.466H18.12V17.336H10.882Z" fill="#000000" /></g></g></g></g></svg>
