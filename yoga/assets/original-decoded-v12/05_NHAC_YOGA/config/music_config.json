@@ -1,0 +1,37 @@
+[
+    {
+        "music": "yoga_01.mp3",
+        "name": "Yoga 01",
+        "cover": "1.jpg",
+        "coverDefault": "img_music_01.jpg",
+        "duration": 113
+    },
+    {
+        "music": "yoga_02.mp3",
+        "name": "Yoga 02",
+        "cover": "2.jpg",
+        "coverDefault": "img_music_02.jpg",
+        "duration": 183
+    },
+    {
+        "music": "yoga_03.mp3",
+        "name": "Yoga 03",
+        "cover": "3.jpg",
+        "coverDefault": "img_music_03.jpg",
+        "duration": 113
+    },
+    {
+        "music": "yoga_04.mp3",
+        "name": "Yoga 04",
+        "cover": "4.jpg",
+        "coverDefault": "img_music_04.jpg",
+        "duration": 96
+    },
+    {
+        "music": "yoga_05.mp3",
+        "name": "Yoga 05",
+        "cover": "5.jpg",
+        "coverDefault": "img_music_05.jpg",
+        "duration": 229
+    }
+]

@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="t" />
+    <meta property="og:image" content="" />
+    <title></title>
+    <link rel="stylesheet" href="style/css/style.css">
+
+
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="post-media">
+        <div id="ytbvideo"></div>
+    </div><!-- .post-media -->
+
+</div><!-- .wrapper -->
+
+<!-- Youtube iframe API  -->
+
+<script type="text/javascript">
+    var pkg = getQueryString('pkg');
+    var devicetype = getQueryString('devicetype');
+    var screenwidth = getQueryString('screenwidth');
+    var screenheight = getQueryString('screenheight');
+    var activityname = getQueryString('activityname');
+    var methodname = getQueryString('methodname');
+    var gotime = getQueryString('gotime');
+    if(screenwidth ==''){
+        screenwidth=640;
+    }
+    if(screenheight =='' ){
+        screenheight = 400;
+    }
+    var gaid = 'UA-115879899-1';
+    var videoid = getQueryString('videoid');
+    var mVideoState = -101;
+    var mVideoPause = -1;
+    showvideo();
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    };
+
+    function jsgareport($category,$action,$label){
+        if(  window[activityname] !=undefined){
+             window[activityname].gareport(gaid,$category,$action,$label);
+        }else{
+            if(devicetype ==2){
+                var eventobj = {
+                    gaid:gaid,
+                    category:$category,
+                    action:$action,
+                    label:$label
+                };
+                 window.webkit.messageHandlers.ScanAction.postMessage(JSON.stringify(eventobj));
+            }
+        }
+    }
+
+    function showvideo(){
+        document.querySelector(".post-media").style.display = "block";
+        addloding();
+        var sNew = document.createElement("script");
+        sNew.async = true;
+        sNew.src = "https://www.youtube.com/iframe_api";
+        var s1 = document.getElementsByTagName('script')[0];
+        s1.parentNode.insertBefore(sNew, s1);
+    }
+
+    function stopVideo(){
+        player.stopVideo();
+    }
+
+    function pauseVideo(){
+        if(mVideoState == -1 || mVideoState == 3 ||mVideoState == -101){
+            mVideoPause = 0;
+        }else{
+            mVideoPause = -1;
+            player.pauseVideo();
+        }
+    }
+
+    function clearVideo(){
+        player.clearVideo()
+    }
+
+    function onYouTubeIframeAPIReady() {
+        var bodyobj = document.querySelector("body");
+        var wrapperobj = document.querySelector(".wrapper");
+        var imgobj = document.querySelector("img");
+        var mediaobj = document.querySelector(".post-media");
+        bodyobj.style.width = screenwidth+'px';
+        bodyobj.style.height = screenheight+'px';
+
+        wrapperobj.style.width = screenwidth+'px';
+        wrapperobj.style.height = screenheight+'px';
+
+//        imgobj.style.width = screenwidth+'px';
+//        imgobj.style.height = screenheight+'px';
+
+        mediaobj.style.width = screenwidth+'px';
+        mediaobj.style.height = screenheight+'px';
+
+        player = new YT.Player('ytbvideo', {
+            width: screenwidth,
+            height: screenheight,
+            videoId: videoid,
+            playerVars: { 'autoplay':1 ,'controls': 2, 'modestbranding': 1, 'showinfo':0, 'wmode':'transparent', 'enablejsapi':1 , 'rel':0, 'playsinline': 1,'fs':0},
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
+        });
+
+    }
+    function onPlayerReady(event) {
+        var media = document.querySelector(".post-media");
+        media.removeChild(document.querySelector(".loading"));
+        media.style.display = "block";
+        console.log('视频自动播放');
+        notifyYoga('autoplay');
+        jsgareport('webvideo','视频自动播放'+pkg,videoid);
+        if(gotime !== null){
+            player.seekTo(Number(gotime),true);
+        }
+        if(devicetype == 1){
+            window[activityname].analogPlayVideo();
+        }
+    }
+
+    function onPlayerStateChange(event) {
+        var videotime = player.getDuration();
+        var videostate = player.getPlayerState();
+        var videocurrent = player.getCurrentTime();
+        notifyYoga(videostate)
+
+        mVideoState = videostate;
+
+        if(mVideoState != -1 && mVideoState != 3 && mVideoState != -101 && mVideoPause == 0){
+            mVideoPause = -1;
+            player.pauseVideo();
+        }
+
+        if (videostate == 2 && videocurrent < 300) {
+            console.log('视频被暂停且观看小于5分钟');
+            jsgareport('webvideo','视频被暂停且观看小于5分钟'+pkg,videoid);
+
+        }
+        if (videostate == 2 && videocurrent < 900 && videocurrent >= 300) {
+            console.log('视频被暂停且观看小于15分钟');
+            jsgareport('webvideo','视频被暂停且观看小于15分钟'+pkg,videoid);
+        }
+
+        if (videostate == 2) {
+            console.log('视频暂停播放');
+            jsgareport('webvideo','视频暂停播放'+pkg,videoid);
+        }
+        if (videostate == 1 && videocurrent > 1) {
+            console.log('视频重新播放');
+            jsgareport('webvideo','视频重新播放'+pkg,videoid);
+
+        }
+
+        if (videostate == 0 && videocurrent == videotime) {
+            notifyYoga('finish');
+            console.log('视频播放完成');
+            jsgareport('webvideo','视频播放完成'+pkg,videoid);
+
+        }
+        if (videostate == 0 && videocurrent == videotime && videocurrent < 300) {
+            console.log('视频播放完成且视频长度小于5分钟');
+            jsgareport('webvideo','视频播放完成且视频长度小于5分钟'+pkg,videoid);
+
+        }
+        if (videostate == 0 && videocurrent == videotime && videocurrent < 900 && videocurrent >= 300) {
+            console.log('视频播放完成且视频长度小于15分钟');
+            jsgareport('webvideo','视频播放完成且视频长度小于15分钟'+pkg,videoid);
+
+        }
+    }
+
+    function onPlayerError(event){
+        console.log(event.data);
+        notifyYoga("fail",event.data)
+        var url = window.location.href;
+        var num = {
+            "2": "请求包含无效的参数值（例如视频ID不足11个字符或者视频ID包含无效字符）",
+            "5": "请求的内容无法在HTML5播放器中播放，或者发生了与HTML5播放器有关的其他错误",
+            "100": "找不到所请求的视频（例如视频已被删除或者视频标记为私有）",
+            "101": "所请求的视频的所有者不允许在嵌入式播放器中播放此视频",
+            "150": "所请求的视频的所有者不允许在嵌入式播放器中播放此视频"
+        }
+
+        var errornum = num[event.data];
+        jsgareport('webvideo','视频播放失败'+pkg,'['+videoid+']:'+errornum);
+    }
+
+    function ajax(url){
+        if(window.XMLHttpRequest){
+            var oAjax = new XMLHttpRequest();
+        }
+        else{
+            var oAjax = new ActiveXObject("Microsoft.XMLHTTP");//IE6浏览器创建ajax对象
+        }
+        oAjax.open("GET",url,true);
+        oAjax.send();
+        oAjax.onreadystatechange=function(){
+            if(oAjax.readyState==4){
+                if(oAjax.status==200){
+                    console.log("success");
+                }else{
+                    if(fnfiled){
+                        fnField(oAjax.status);
+                    }
+                }
+            }
+        };
+    }
+
+    function addloding(){   //loading 效果
+        var media = document.querySelector(".post-media");
+        var ucp = document.createElement("div");
+        ucp.className = "loading";
+        var aadiv = document.createElement('div');
+        aadiv.className = "loadEffect";
+        for (var i = 0; i < 8; i++) {
+            var addspan = document.createElement('span');
+            aadiv.appendChild(addspan);
+        }
+        ucp.appendChild(aadiv);
+        media.appendChild(ucp);
+    }
+
+    function addcancelbtn(){   //新增 关闭按钮 
+        if (document.querySelector("#cancel") == null) {
+            var media = document.querySelector(".post-media");
+            var btntag = '<span id="cancel" style="position: fixed;right: 10%;top: 1.2%;color: #000;z-index: 100;padding: 8px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C17.53 2 22 6.47 22 12C22 17.53 17.53 22 12 22C6.47 22 2 17.53 2 12C2 6.47 6.47 2 12 2ZM15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z" fill="white"/></svg></span>';
+            media.insertAdjacentHTML('beforeBegin',btntag);
+            document.querySelector("#cancel").onclick=function(){
+                notifyYoga('cancel')
+            }
+        }
+    }
+
+    function delcancelbtn(){   //删除 关闭按钮
+        if (document.querySelector("#cancel")) {
+            var ptag = document.querySelector(".wrapper");
+            var ctag = document.querySelector("#cancel");
+            ptag.removeChild(ctag); 
+        }
+    }
+
+    function notifyYoga(str,par){  //yoga传参
+        if (str == 'cancel') {
+            if(window[activityname]){
+                window[activityname].playerWebCancel('cancel');
+            }
+        }else{
+            if (str == 'fail') {   // 播放失败
+                var val = 'fail'+'_'+par;
+            }else{   // 自动播放
+                var val = str;
+            }
+            if(window[activityname]){
+                window[activityname].playerNotify(val);
+            }
+        }
+    }
+
+    function getVideoProgress() {
+        if(window[activityname]){
+            window[activityname].notifyVideoProgress(player.getCurrentTime());
+        }
+        return player.getCurrentTime()
+    }
+</script>
+</body>
+</html>

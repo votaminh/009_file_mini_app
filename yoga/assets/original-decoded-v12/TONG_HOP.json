@@ -1,0 +1,110 @@
+{
+  "product": "Yoga 1.10.5 (versionCode 96)",
+  "created_date": "2026-10-25",
+  "status": "PARTIAL_MEDIA_COVERAGE__ALL_AVAILABLE_DECODED_ASSETS_PACKED",
+  "files_excluding_summary_manifest": 1955,
+  "bytes_excluding_summary_manifest": 130746625,
+  "verified_json_files": 332,
+  "verified_image_files": 1508,
+  "groups": {
+    "ACTION_LOTTIE": {
+      "file_count": 213,
+      "bytes": 7975521
+    },
+    "APK_AUDIO_VIDEO_RESOURCES": {
+      "file_count": 18,
+      "bytes": 3117171
+    },
+    "APK_BITMAP_RESOURCES": {
+      "file_count": 1347,
+      "bytes": 4246612
+    },
+    "APK_OTHER_ASSETS": {
+      "file_count": 197,
+      "bytes": 5152742
+    },
+    "APK_RAW_JSON": {
+      "file_count": 1,
+      "bytes": 5809
+    },
+    "AUDIT_REPORT": {
+      "file_count": 1,
+      "bytes": 3500
+    },
+    "AUDIT_SUMMARY": {
+      "file_count": 1,
+      "bytes": 545
+    },
+    "AUDIT_TABLES": {
+      "file_count": 8,
+      "bytes": 249459
+    },
+    "CUSTOM_ACTION_DEFINITIONS": {
+      "file_count": 1,
+      "bytes": 63449
+    },
+    "DECODED_CONFIG": {
+      "file_count": 3,
+      "bytes": 249328
+    },
+    "DOCS": {
+      "file_count": 1,
+      "bytes": 1520
+    },
+    "EXPLORE_IMAGES": {
+      "file_count": 12,
+      "bytes": 60346
+    },
+    "EXPLORE_LANG": {
+      "file_count": 17,
+      "bytes": 1121939
+    },
+    "GIAO_AN": {
+      "file_count": 7,
+      "bytes": 101870
+    },
+    "MEDITATION_AUDIO": {
+      "file_count": 11,
+      "bytes": 51565358
+    },
+    "MEDITATION_IMAGES": {
+      "file_count": 22,
+      "bytes": 466376
+    },
+    "MEDITATION_VIDEO": {
+      "file_count": 11,
+      "bytes": 14281610
+    },
+    "OTHER_WORKOUT_VIDEO": {
+      "file_count": 1,
+      "bytes": 348396
+    },
+    "PILATES_VIDEO": {
+      "file_count": 51,
+      "bytes": 29949127
+    },
+    "WORKOUT_LANG": {
+      "file_count": 17,
+      "bytes": 7920898
+    },
+    "YOGA_COVERS": {
+      "file_count": 9,
+      "bytes": 62655
+    },
+    "YOGA_MUSIC": {
+      "file_count": 5,
+      "bytes": 3801563
+    },
+    "YOGA_MUSIC_CONFIG": {
+      "file_count": 1,
+      "bytes": 831
+    }
+  },
+  "known_open_items": {
+    "plan_action_ids_without_same_named_offline_lottie": 220,
+    "explore_image_ids_without_local_file": 707,
+    "explore_workouts_media_not_fully_verified": 184,
+    "sportsdata_groups_unverified": 32
+  },
+  "note": "Counts of unresolved IDs do not necessarily represent an equal number of missing downloadable files. All verified available media included."
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "res/drawable-xhdpi-v4/ic_smile.webp",
+    "local": "assets/setup-profile/original/ic_smile.webp",
+    "sha256": "6471453dc2a0c2bc65539dc1d6d3fbd581ef7314dc2cb921a0f6bf2fc019ab0f"
+  },
+  {
+    "path": "res/drawable-xhdpi-v4/ic_line_vertical.png",
+    "local": "assets/setup-profile/original/ic_line_vertical.png",
+    "sha256": "9c45098cf2ae4f6fa4332773e738e3d13cd0c160016dae5a52eece4e8998ee61"
+  },
+  {
+    "path": "res/drawable-hdpi-v4/ic_action_1.webp",
+    "local": "assets/setup-profile/original/ic_action_1.webp",
+    "sha256": "e8e8802e329d60c0ba1b012ad90dc44106a56e4c85dc9e5dfa497637bfe926af"
+  },
+  {
+    "path": "res/drawable/ic_purple_point.xml",
+    "local": "assets/setup-profile/original/ic_purple_point.svg",
+    "conversion": "preserved original viewport, pathData, stroke, fill"
+  }
+]
