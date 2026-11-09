@@ -1,0 +1,13 @@
+{
+  "manifest": "manifest.v1.json",
+  "mediaGroups": [
+    "lottie",
+    "3d",
+    "live",
+    "gym"
+  ],
+  "note": "Only remote media is hosted here. UI, action attrs/text, plans and covers are bundled in Mini App.",
+  "root": "sixpack/assets/",
+  "schema": "sixpack.assets.remote.index.v1",
+  "version": "1.5.3"
+}
