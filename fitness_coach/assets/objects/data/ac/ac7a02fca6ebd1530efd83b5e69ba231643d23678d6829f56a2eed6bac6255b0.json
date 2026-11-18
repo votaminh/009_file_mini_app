@@ -1,0 +1,65 @@
+[
+    {
+        "music": "1.mp3",
+        "name": "Beautiful day",
+        "cover": "1.jpg",
+        "coverDefault": "img_music_01.jpg",
+        "duration": 165
+    },
+    {
+        "music": "2.mp3",
+        "name": "Men at arms",
+        "cover": "2.jpg",
+        "coverDefault": "img_music_02.jpg",
+        "duration": 71
+    },
+    {
+        "music": "3.mp3",
+        "name": "Daybreak",
+        "cover": "3.jpg",
+        "coverDefault": "img_music_03.jpg",
+        "duration": 200
+    },
+    {
+        "music": "4.mp3",
+        "name": "Forever young",
+        "cover": "4.jpg",
+        "coverDefault": "img_music_04.jpg",
+        "duration": 85
+    },
+    {
+        "music": "5.mp3",
+        "name": "Rock on",
+        "cover": "5.jpg",
+        "coverDefault": "img_music_05.jpg",
+        "duration": 137
+    },
+    {
+        "music": "6.mp3",
+        "name": "Endless Strike",
+        "cover": "6.jpg",
+        "coverDefault": "img_music_06.jpg",
+        "duration": 137
+    },
+    {
+        "music": "7.mp3",
+        "name": "Infinity",
+        "cover": "7.jpg",
+        "coverDefault": "img_music_07.jpg",
+        "duration": 137
+    },
+    {
+        "music": "8.mp3",
+        "name": "Power of Fire",
+        "cover": "8.jpg",
+        "coverDefault": "img_music_08.jpg",
+        "duration": 111
+    },
+    {
+        "music": "9.mp3",
+        "name": "Stand to Fight",
+        "cover": "9.jpg",
+        "coverDefault": "img_music_09.jpg",
+        "duration": 144
+    }
+]
