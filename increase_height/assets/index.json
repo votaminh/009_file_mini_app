@@ -1,0 +1,16 @@
+{
+  "schema": "increase_height.runtime-remote-index.v2",
+  "release": "v2.0-apk-bundled-vs-runtime-remote-20261118",
+  "manifest": "manifest.json",
+  "assetRoot": "increase_height/assets/",
+  "mediaGroups": {
+    "action_covers": 120,
+    "data": 1,
+    "music": 5,
+    "nutrition": 60,
+    "tips": 40,
+    "video": 356
+  },
+  "downloadPolicy": "on_demand_not_preload",
+  "localAssetManifest": "PhonePilot Mini App assets/manifest.json"
+}
