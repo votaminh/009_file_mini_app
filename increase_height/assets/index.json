@@ -9,7 +9,8 @@
     "music": 5,
     "nutrition": 60,
     "tips": 40,
-    "video": 356
+    "video": 356,
+    "voice": 148
   },
   "downloadPolicy": "on_demand_not_preload",
   "localAssetManifest": "PhonePilot Mini App assets/manifest.json"
